@@ -27,6 +27,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     owns = models.ForeignKey(Owned, on_delete=models.CASCADE, related_name='owns')
     wishlist = models.ForeignKey(Wishlist, on_delete= models.CASCADE, related_name='wishlist')
+    img = models.TextField(default="")
 
     def __str__(self):
         return self.name

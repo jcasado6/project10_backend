@@ -12,7 +12,7 @@ class WishlistSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('name', 'brand', 'model', 'retail_price', 'release_date', 'img')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    owned = serializers.HyperlinkedRelatedField(view_name='owned_detail',
+    owns = serializers.HyperlinkedRelatedField(view_name='owned_detail',
     read_only=True
     )
     
@@ -23,7 +23,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ('name', 'owns', 'wishlist',)
+        fields = ('name', 'owns', 'wishlist', 'img')
 
 
     
