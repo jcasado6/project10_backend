@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import Owned, Wishlist, User
+from rest_framework_jwt.settings import api_settings
+from django.contrib.auth.models import User
 
 class OwnedSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -23,7 +25,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ('name', 'owns', 'wishlist', 'img')
+        fields = ('name', 'owns', 'wishlist', 'img',)
+
+
 
 
     

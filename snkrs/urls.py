@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 from rest_framework.routers import DefaultRouter
+from rest_framework_jwt.views import obtain_jwt_token
+from .views import UserList
 
 urlpatterns = [
     path('users/', views.UserList.as_view(), name='user_list'),
